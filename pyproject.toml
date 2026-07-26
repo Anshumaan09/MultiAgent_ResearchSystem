@@ -15,3 +15,7 @@ dependencies = [
     "streamlit>=1.60.0",
     "uvicorn>=0.51.0",
 ]
+
+[tool.pyright]
+extraPaths = ["src"]
+
