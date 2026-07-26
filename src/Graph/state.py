@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class PlanItem(TypedDict):
@@ -33,7 +33,7 @@ class ResearchState(TypedDict):
     research_data: dict[str, str]
 
     # Summarizer Output
-    summary_data: dict[str, str]
+    summary: str
 
     # Fact Checker Output
     fact_checked_data: dict[str, str]

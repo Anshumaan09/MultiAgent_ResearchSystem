@@ -5,7 +5,7 @@ state = {
     "plan": [],
     "current_plan_index": 0,
     "research_data": {},
-    "summary_data": {},
+    "summary": "",
     "fact_checked_data": {},
     "final_report": "",
     "errors": []

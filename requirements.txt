@@ -7,3 +7,4 @@ pydantic
 fastapi
 uvicorn
 streamlit
+typing_extensions
