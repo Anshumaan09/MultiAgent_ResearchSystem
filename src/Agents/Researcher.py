@@ -1,7 +1,7 @@
 from Graph.state import ResearchState, PlanItem
 from Prompts.research_prompt import get_research_prompt
 from llm import get_llm
-from utils.llm_response import validate_llm_response
+from Utils.llm_response import validate_llm_response
 
 def validate_research_state(state: ResearchState) -> None:
     """
