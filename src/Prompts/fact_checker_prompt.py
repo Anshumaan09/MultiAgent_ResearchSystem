@@ -1,20 +1,25 @@
-def get_fact_checker_prompt(summary: str) -> str:
+def get_fact_checker_prompt(section: str, content: str) -> str:
     return f"""
 Role:
-You are an AI fact checker.
+You are an expert fact-checker and technical reviewer.
 
 Task:
-Review the following content.
+Review the following research section for factual accuracy.
+
+Section:
+{section}
 
 Content:
-{summary}
+{content}
 
-Constraints:
-- Identify factual inconsistencies.
-- Correct incorrect statements.
-- Improve factual accuracy.
-- Do not rewrite unnecessarily.
+Instructions:
+- Correct factual inaccuracies.
+- Remove unsupported or misleading claims.
+- Preserve all correct information.
+- Do not invent new facts or add information that is not supported.
+- Maintain the original meaning and level of detail.
+- Keep the writing clear, professional, and well-structured.
 
 Output:
-Return the corrected content only.
+Return only the corrected content.
 """

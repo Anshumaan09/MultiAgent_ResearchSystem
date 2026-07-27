@@ -16,8 +16,8 @@ def validate_summary_state(state: ResearchState) -> None:
     if not state["query"].strip():
         raise ValueError("Research query cannot be empty.")
 
-    if not state["research_data"]:
-        raise ValueError("No research data available to summarize.")
+    if not state["fact_checked_data"]:
+        raise ValueError("No fact-checked data available to summarize.")
 
 
 def build_research_document(research_data: dict[str, str]) -> str:
@@ -57,7 +57,7 @@ def summary_agent(state: ResearchState) -> ResearchState:
 
         # Step 2: Build research document
         research_document = build_research_document(
-            state["research_data"]
+            state["fact_checked_data"]
         )
 
         # Step 3: Generate prompt
