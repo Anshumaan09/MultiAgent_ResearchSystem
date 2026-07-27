@@ -3,6 +3,7 @@ from Graph.state import ResearchState
 from llm import get_llm
 from Prompts.summarizer_prompt import get_summary_prompt
 from Utils.llm_response import validate_llm_response
+from Utils.document_builder import build_markdown_document
 
 
 def validate_summary_state(state: ResearchState) -> None:
@@ -56,7 +57,7 @@ def summary_agent(state: ResearchState) -> ResearchState:
         validate_summary_state(state)
 
         # Step 2: Build research document
-        research_document = build_research_document(
+        research_document = build_markdown_document(
             state["fact_checked_data"]
         )
 

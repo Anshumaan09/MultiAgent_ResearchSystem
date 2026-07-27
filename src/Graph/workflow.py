@@ -6,6 +6,7 @@ from Agents.planner import planner_agent
 from Agents.Researcher import research_agent
 from Agents.summarizer import summary_agent
 from Agents.fact_checker import fact_checker_agent
+from Agents.writer import writer_agent
 
 def build_graph() -> CompiledStateGraph:
     workflow : StateGraph = StateGraph(ResearchState)
@@ -14,12 +15,14 @@ def build_graph() -> CompiledStateGraph:
     workflow.add_node("research", research_agent)
     workflow.add_node("fact_checker", fact_checker_agent)
     workflow.add_node("summary", summary_agent)
+    workflow.add_node("writer", writer_agent)
 
 
     workflow.add_edge(START, "planner")
     workflow.add_edge("planner", "research")
     workflow.add_edge("research", "fact_checker")
     workflow.add_edge("fact_checker", "summary")
-    workflow.add_edge("summary", END)
+    workflow.add_edge("summary", "writer")
+    workflow.add_edge("writer", END)
 
     return workflow.compile()

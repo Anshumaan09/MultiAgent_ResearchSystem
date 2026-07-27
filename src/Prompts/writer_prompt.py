@@ -1,21 +1,38 @@
-def get_writer_prompt(research_sections: str) -> str:
+def get_writer_prompt(
+    query: str,
+    summary: str,
+    research_document: str,
+) -> str:
     return f"""
 Role:
-You are a professional technical writer.
+You are a senior technical report writer.
 
 Task:
-Convert the following researched sections into a polished report.
+Write a polished, professional technical research report using the verified research provided.
 
-Content:
-{research_sections}
+Research Topic:
+{query}
 
-Constraints:
-- Use Markdown.
-- Maintain logical flow.
-- Use headings and subheadings.
-- Preserve all important information.
-- Write professionally.
+Executive Summary:
+{summary}
+
+Verified Research:
+{research_document}
+
+Instructions:
+
+- Generate a professional report title.
+- Use Markdown formatting.
+- Organize the report using clear headings.
+- Start with an Executive Summary.
+- Present each research section logically.
+- Improve readability and flow.
+- Preserve all factual accuracy.
+- Do not introduce new facts.
+- Do not remove important technical information.
+- End with a concise conclusion.
 
 Output:
-Return the final report in Markdown.
+
+Return only the completed Markdown report.
 """
