@@ -1,34 +1,18 @@
-# Agentic AI: Autonomous Systems with Decision-Making Capabilities
+# Technical Research Report: Agentic AI
 ## Executive Summary
-Agentic AI refers to a subset of artificial intelligence that enables systems to act autonomously, making decisions and taking actions based on their own goals, motivations, and understanding of their environment. This concept is rooted in the idea of agency, which is the capacity of an entity to act independently and make choices that affect its surroundings. At its core, Agentic AI is built around several key principles, including autonomy, reactivity, proactivity, and social ability, which enable these systems to navigate complex environments, adapt to changing circumstances, and achieve their goals.
+Agentic AI is a form of autonomous AI system designed to achieve a specific outcome by independently creating, executing, and refining its own action plan. It is an intelligent framework built to act on information with purpose, operating independently with minimal human supervision. The core principles of Agentic AI revolve around autonomous decision-making and action, utilizing AI agents that mimic human decision-making to solve problems in real-time.
 
 ## Introduction to Agentic AI
-Agentic AI systems are designed to perceive their environment, reason about the current state of affairs, and execute actions that align with their objectives, all while operating with a degree of autonomy. The development of Agentic AI is influenced by various disciplines, including computer science, cognitive science, and philosophy, which have contributed to our understanding of agency, autonomy, and decision-making. Key concepts such as intentionality, the ability of an agent to have goals and motivations, and rationality, the ability of an agent to make decisions based on reason and evidence, are essential components of Agentic AI.
+Agentic AI is a form of autonomous AI system designed to achieve a specific outcome by independently creating, executing, and refining its own action plan. At its core, it is an intelligent framework built not just to process information, but to act on it with purpose. Agentic AI is characterized by its ability to operate independently with minimal human supervision.
 
-## Key Principles of Agentic AI
-The core principles of Agentic AI include:
-* **Autonomy**: the ability of the system to operate independently without human intervention
-* **Reactivity**: the capacity to respond to changes in the environment
-* **Proactivity**: the ability to take the initiative and act in anticipation of future events
-* **Social ability**: the capacity to interact with other agents and humans
-These principles are fundamental to the development of Agentic AI systems, as they enable these systems to navigate complex environments, adapt to changing circumstances, and achieve their goals.
+## Core Principles of Agentic AI
+The core principles of Agentic AI revolve around its capacity for autonomous decision-making and action. It consists of AI agents, which are machine learning models that mimic human decision-making to solve problems in real-time. These agents perform specific subtasks required to reach a goal, with their efforts coordinated through AI orchestration. Agentic AI executes actions in underlying systems to achieve higher-level goals.
 
-## Characteristics of Agentic AI Systems
-Agentic AI systems possess several key characteristics, including:
-* **Autonomy**: the ability to operate independently and make decisions without human intervention
-* **Decision-making**: the ability to weigh options and make choices based on reasoning and evidence
-* **Learning**: the ability to adapt and improve over time based on experience and feedback
-* **Interaction**: the ability to communicate and cooperate with other agents and humans
-* **Reactivity and proactivity**: the ability to respond to changes and take initiative in their environment
+## Technical Implementation
+Agentic AI is centered around the orchestration and execution of agents that use large language models (LLMs) as a key component to perform actions through tools. This technology is designed to operate with a higher degree of autonomy, using AI agents as autonomous entities to perform specific tasks.
 
-## Applications of Agentic AI
-Agentic AI has numerous potential applications, including:
-* **Robotics**: creating autonomous entities that can perceive their environment and execute actions that align with their objectives
-* **Smart homes**: learning the habits and preferences of occupants and adjusting lighting, temperature, and entertainment systems accordingly
-* **Autonomous vehicles**: creating autonomous entities that can perceive their environment, reason about the current state of affairs, and execute actions that align with their objectives
-
-## Implications and Considerations
-The development of Agentic AI raises important questions about the nature of agency, autonomy, and decision-making. As Agentic AI systems become more sophisticated, they will be capable of making decisions that have significant consequences, raising concerns about accountability, responsibility, and ethics. Researchers and developers must carefully consider these issues as they design and deploy Agentic AI systems, ensuring that they align with human values and promote the well-being of individuals and society as a whole.
+## Key Characteristics and Potential Applications
+Agentic AI is recognized as an advanced form of artificial intelligence focused on autonomous decision-making and action, with the potential to automate complex processes and optimize workflows. Its key characteristics include the ability to operate independently, make decisions autonomously, and refine its own action plan. With its capacity for autonomous decision-making and action, Agentic AI has the potential to significantly impact various domains by streamlining processes and improving efficiency.
 
 ## Conclusion
-In conclusion, Agentic AI is a rapidly evolving field that holds great promise for creating autonomous systems that can act independently and make decisions based on their own goals and motivations. By understanding the core principles of Agentic AI, including autonomy, reactivity, proactivity, and social ability, researchers and developers can create systems that are capable of navigating complex environments and achieving their objectives. As Agentic AI continues to advance, it is essential to consider the implications of these systems and ensure that they are designed and deployed in ways that promote the well-being of individuals and society.
+In conclusion, Agentic AI is a sophisticated autonomous AI system that operates independently with minimal human supervision. Its core principles, technical implementation, and key characteristics make it an advanced form of artificial intelligence with the potential to automate complex processes and optimize workflows. As research continues to unfold, Agentic AI is likely to have a significant impact on various domains, streamlining processes and improving efficiency.

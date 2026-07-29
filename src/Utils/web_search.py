@@ -5,7 +5,7 @@ from tavily import TavilyClient
 search_tool = TavilyClient( api_key=os.getenv("TAVILY_API_KEY"))
 
 
-def search_web(query: str, max_results: int = 5) -> str:
+def search_web(query: str, max_results: int = 3) -> str:
     """
     Search the web using Tavily and return formatted results.
     """

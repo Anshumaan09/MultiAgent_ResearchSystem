@@ -2,7 +2,7 @@ from Graph.workflow import build_graph
 
 workflow = build_graph()
 
-query = input("Enter What you want to search")
+query = input("Enter What you want to search: ")
 
 initial_state = {
     "query": query,
