@@ -43,3 +43,5 @@ class ResearchState(TypedDict):
 
     # Workflow Errors
     errors: list[ErrorInfo]
+
+    next_step: str
