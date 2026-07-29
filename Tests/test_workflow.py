@@ -13,7 +13,10 @@ initial_state = {
     "errors": []
 }
 
-result = workflow.invoke(initial_state)
-
-print(result["summary"])
-print(result["errors"])
+result = workflow.invoke(initial_state) 
+print("\n===== FINAL REPORT =====\n") 
+print(result["final_report"]) 
+print("\n===== ERRORS =====\n") 
+print(result["errors"]) 
+with open("workflow_output.md", "w", encoding="utf-8") as file: 
+    file.write(result["final_report"])
