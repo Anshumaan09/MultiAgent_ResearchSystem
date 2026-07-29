@@ -1,14 +1,18 @@
-from typing import Final
-
-
-def get_research_prompt(topic: str, section: str, objective: str) -> str:
+def get_research_prompt(
+    topic: str,
+    section: str,
+    objective: str,
+    web_context: str,
+) -> str:
     return f"""
 Role:
 You are an expert researcher.
 
-Context:
-You are responsible for researching one section of a larger report.
-The overall topic of the report is: {topic}
+Task:
+Write a detailed research section using the provided web search results.
+
+Research Topic:
+{topic}
 
 Section:
 {section}
@@ -16,24 +20,17 @@ Section:
 Objective:
 {objective}
 
-Task:
-Generate detailed research for this section.
+Web Search Results:
+{web_context}
 
 Instructions:
-- Research only this section.
-- Stay focused on the objective.
-- Write 500-700 words.
-- Use clear technical language.
-- Do not include Markdown headings.
-- Return plain text only.
-
-Constraints:
-- Stay focused on this section only.
-- Use factual information.
-- Do not repeat information from other sections.
-- Write in professional language.
-- Use headings and bullet points where appropriate.
+- Use ONLY the information provided in the web search results.
+- Synthesize the information into a coherent research section.
+- Do not invent facts or citations.
+- If the provided information is limited, clearly mention that the available sources provide limited details.
+- Write in a professional, factual, and well-structured style.
+- Focus specifically on the given section and objective.
 
 Output:
-Return only the research text.
+Return only the research content for this section.
 """

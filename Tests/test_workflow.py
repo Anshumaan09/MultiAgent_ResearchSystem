@@ -2,8 +2,10 @@ from Graph.workflow import build_graph
 
 workflow = build_graph()
 
+query = input("Enter What you want to search")
+
 initial_state = {
-    "query": "What is Agentic AI?",
+    "query": query,
     "plan": [],
     "current_plan_index": 0,
     "research_data": {},
