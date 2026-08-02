@@ -1,28 +1,81 @@
-# Multi-Agent Research System
+# 🤖 Multi-Agent Research System
 
-A **Supervisor-Orchestrated Multi-Agent Research System** built with **LangGraph**, **LangChain**, **Groq**, and **Tavily**. The system performs **live web-grounded research**, **fact checking**, **summarization**, and **professional report generation** using a team of specialized AI agents coordinated by a dynamic supervisor.
+> **Supervisor-Orchestrated Agentic AI for Live Web-Grounded Technical Research**
 
----
+A production-style **Agentic AI research system** built with **LangGraph**, **LangChain**, **Groq**, and **Tavily** that automatically plans research, searches the web in real time, verifies information, summarizes findings, and generates a polished **Markdown technical report**.
 
-## Features
-
-* **Supervisor-driven orchestration** using LangGraph conditional routing
-* **Dynamic execution flow** instead of a fixed linear pipeline
-* **Live web search** using Tavily
-* **Planner Agent** for research decomposition
-* **Research Agent** for web-grounded information synthesis
-* **Fact Checker Agent** for content verification
-* **Summary Agent** for concise technical summaries
-* **Writer Agent** for professional Markdown report generation
-* **Typed shared state** using `TypedDict`
-* **Modular prompt architecture**
-* **Unit and integration tests**
+Unlike simple LLM chains, this project uses a **Supervisor Agent with conditional routing**, making the workflow **dynamic, stateful, and adaptive**.
 
 ---
 
-## Actual LangGraph Workflow
+## 🚀 What Makes This Different?
 
-Unlike a traditional sequential pipeline, this project uses a **Supervisor Agent** that examines the shared state after every step and dynamically decides which agent should execute next.
+Traditional AI workflows are usually:
+
+```text
+User Query → LLM → Answer
+```
+
+This project implements a **true multi-agent architecture**:
+
+```text
+User Query
+      ↓
+Supervisor Agent
+      ↓
+Planner Agent
+      ↓
+Research Agent
+      ├── Tavily Web Search
+      ├── Live Web Context
+      └── LLM Synthesis
+      ↓
+Fact Checker Agent
+      ↓
+Summary Agent
+      ↓
+Writer Agent
+      ↓
+Professional Technical Report
+```
+
+The **Supervisor Agent** continuously inspects the shared workflow state and decides which agent should execute next using **LangGraph conditional edges**.
+
+---
+
+# ✨ Features
+
+### 🧠 Agentic Orchestration
+
+* Supervisor-driven workflow execution
+* Dynamic conditional routing with LangGraph
+* Shared typed state across all agents
+
+### 🌐 Live Web-Grounded Research
+
+* Real-time web search using **Tavily**
+* Web context injected into research prompts
+* Reduced hallucinations through grounded generation
+
+### 📝 Professional Report Generation
+
+* Automatic research planning
+* Structured technical summaries
+* Clean Markdown report output
+* Downloadable report generation
+
+### 🛡️ Reliability
+
+* Typed `ResearchState`
+* Modular prompt architecture
+* Reusable utility components
+* Unit and integration tests
+
+---
+
+# 🏗️ System Architecture
+
+## Actual LangGraph Execution Flow
 
 ```text
 START
@@ -52,39 +105,17 @@ Supervisor
 END
 ```
 
-### Research Execution
-
-```text
-User Query
-      ↓
-Supervisor
-      ↓
-Planner
-      ↓
-Research Agent
-      ├── Tavily Web Search
-      ├── Real-Time Web Results
-      └── LLM Synthesis
-      ↓
-Fact Checker
-      ↓
-Summary
-      ↓
-Writer
-      ↓
-Professional Markdown Report
-```
-
-This makes the system **state-driven and adaptive**, demonstrating **true LangGraph conditional routing** rather than a simple hardcoded chain.
+This is **not a hardcoded pipeline**. The Supervisor dynamically determines the next step based on the current workflow state.
 
 ---
 
-## Project Structure
+# 📂 Project Structure
 
 ```text
 MultiAgent_Research_System/
 │
-├── app.py
+├── app.py                         # Streamlit frontend
+│
 ├── src/
 │   ├── Agents/
 │   │   ├── planner.py
@@ -114,54 +145,80 @@ MultiAgent_Research_System/
 │   └── llm.py
 │
 ├── Tests/
-├── README.md
-└── pyproject.toml
+│   ├── test_planner.py
+│   ├── test_researcher.py
+│   ├── test_factChecker.py
+│   ├── test_summarizer.py
+│   ├── test_writer.py
+│   ├── test_supervisor.py
+│   └── test_workflow.py
+│
+├── .env
+├── pyproject.toml
+└── README.md
 ```
 
 ---
 
-## Tech Stack
+# 🧩 Agent Responsibilities
 
-| Technology       | Purpose                        |
-| ---------------- | ------------------------------ |
-| **Python 3.12+** | Core language                  |
-| **LangGraph**    | Dynamic workflow orchestration |
-| **LangChain**    | LLM integration                |
-| **Groq**         | High-speed LLM inference       |
-| **Tavily**       | Live web search                |
-| **TypedDict**    | Shared workflow state          |
-| **Streamlit**    | Frontend UI                    |
+| Agent            | Responsibility                                      |
+| ---------------- | --------------------------------------------------- |
+| **Supervisor**   | Controls workflow execution and routing             |
+| **Planner**      | Breaks the query into research sections             |
+| **Research**     | Performs Tavily web search and synthesizes findings |
+| **Fact Checker** | Reviews and validates researched content            |
+| **Summary**      | Produces a concise technical summary                |
+| **Writer**       | Generates the final professional Markdown report    |
 
 ---
 
-## Installation
+# 🔧 Tech Stack
 
-### Clone the repository
+| Technology       | Purpose                     |
+| ---------------- | --------------------------- |
+| **Python 3.12+** | Core language               |
+| **LangGraph**    | Dynamic agent orchestration |
+| **LangChain**    | LLM integration             |
+| **Groq**         | Fast LLM inference          |
+| **Tavily**       | Live web search             |
+| **Streamlit**    | Frontend UI                 |
+| **TypedDict**    | Shared typed workflow state |
+
+---
+
+# ⚡ Quick Start
+
+## 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/MultiAgent_Research_System.git
 cd MultiAgent_Research_System
 ```
 
-### Create and activate a virtual environment
+## 2️⃣ Create a Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-**Windows (CMD)**
+### Windows
 
 ```cmd
 .venv\Scripts\activate
 ```
 
-### Install dependencies
+---
+
+## 3️⃣ Install Dependencies
+
+Using **uv** (recommended):
 
 ```bash
 uv sync
 ```
 
-or
+Or using pip:
 
 ```bash
 pip install -r requirements.txt
@@ -169,9 +226,9 @@ pip install -r requirements.txt
 
 ---
 
-## Environment Variables
+## 4️⃣ Configure Environment Variables
 
-Create a **`.env`** file in the project root.
+Create a `.env` file in the project root:
 
 ```env
 GROQ_API_KEY=your_groq_api_key
@@ -180,17 +237,21 @@ TAVILY_API_KEY=your_tavily_api_key
 
 ---
 
-## Run the Streamlit Frontend
+# 🖥️ Run the Frontend
 
 ```cmd
 set PYTHONPATH=src && streamlit run app.py
 ```
 
-Open **http://localhost:8501** in your browser.
+Open:
+
+```text
+http://localhost:8501
+```
 
 ---
 
-## Run the Full Workflow
+# 🧪 Run the Full Workflow
 
 ```cmd
 set PYTHONPATH=src && python Tests\test_workflow.py
@@ -204,9 +265,9 @@ Enter your research topic: What is Agentic AI?
 
 ---
 
-## Example Output
+# 📊 Example Output
 
-The system generates a structured report such as:
+The system generates a structured technical report such as:
 
 ```markdown
 # Technical Research Report: Agentic AI
@@ -214,7 +275,7 @@ The system generates a structured report such as:
 ## Executive Summary
 ...
 
-## Introduction
+## Introduction to Agentic AI
 ...
 
 ## Core Principles
@@ -232,7 +293,7 @@ The system generates a structured report such as:
 
 ---
 
-## Shared State
+# 🧠 Shared Workflow State
 
 ```python
 class ResearchState(TypedDict):
@@ -247,38 +308,104 @@ class ResearchState(TypedDict):
     errors: list[ErrorInfo]
 ```
 
-The `next_step` field is used by the **Supervisor Agent** to perform **conditional routing** in LangGraph.
+The `next_step` field enables **Supervisor-based conditional routing**.
 
 ---
 
-## What This Project Demonstrates
+# 🔍 Tavily Web Search Integration
 
-* **Supervisor-based orchestration**
-* **Stateful multi-agent coordination**
-* **LangGraph conditional edges**
-* **Live Tavily-powered web retrieval**
-* **RAG-style grounded research generation**
-* **Professional report generation pipeline**
-* **Reusable utility and prompt modules**
-* **Integration testing for multi-agent workflows**
+The Research Agent uses **live web retrieval**:
 
----
+```python
+web_context = search_web(
+    query=f"{topic} - {objective}"
+)
+```
 
-## Future Improvements
+This allows the system to:
 
-* Source citations in the final report
-* Parallel research execution
-* Human-in-the-loop approval
-* Retry and recovery strategies
-* Persistent memory
-* FastAPI deployment
-* PDF and DOCX export
-* LLM-based intelligent supervisor
+* fetch **current information from the web**,
+* ground research in **real sources**,
+* synthesize findings into structured technical content.
 
 ---
 
-## Author
+# 🧪 Testing
 
-**Anshumaan Panigrahi**
+Run individual agent tests:
 
-Built as a hands-on exploration of **Agentic AI, LangGraph orchestration, live web-grounded research, and supervisor-driven multi-agent system design**.
+```cmd
+set PYTHONPATH=src && python Tests\test_planner.py
+set PYTHONPATH=src && python Tests\test_researcher.py
+set PYTHONPATH=src && python Tests\test_factChecker.py
+set PYTHONPATH=src && python Tests\test_summarizer.py
+set PYTHONPATH=src && python Tests\test_writer.py
+set PYTHONPATH=src && python Tests\test_supervisor.py
+```
+
+---
+
+# 🎯 Key Engineering Concepts Demonstrated
+
+This project showcases:
+
+* ✅ **LangGraph conditional routing**
+* ✅ **Supervisor-based orchestration**
+* ✅ **Stateful multi-agent coordination**
+* ✅ **RAG-style live web retrieval**
+* ✅ **Prompt modularization**
+* ✅ **Reusable utility components**
+* ✅ **Refactoring and separation of concerns**
+* ✅ **Integration testing for agentic workflows**
+
+---
+
+# 📈 Future Improvements
+
+* 📚 Source citations in the final report
+* ⚡ Parallel research execution
+* 👤 Human-in-the-loop approval
+* 🔁 Retry and recovery strategies
+* 🧠 Persistent memory
+* 🌍 FastAPI deployment
+* 📄 PDF / DOCX export
+* 🤖 LLM-driven intelligent supervisor
+* 📡 Streaming intermediate agent outputs
+
+---
+
+# 🏆 Why This Project Matters
+
+Most LangChain projects demonstrate **sequential chains**.
+
+This project demonstrates:
+
+* **dynamic agent orchestration**,
+* **shared workflow state**,
+* **conditional execution loops**,
+* **live web-grounded reasoning**,
+* **professional report generation**, and
+* **supervisor-controlled adaptive workflows**.
+
+It is a strong portfolio example of **modern Agentic AI engineering with LangGraph**.
+
+---
+
+# 👨‍💻 Author
+
+### **Anshumaan Panigrahi**
+
+Built as a hands-on exploration of:
+
+* **Agentic AI**
+* **LangGraph orchestration**
+* **Supervisor-driven workflows**
+* **Live web-grounded research**
+* **Multi-agent system design**
+* **Stateful AI application architecture**
+
+---
+
+# ⭐ If You Found This Interesting
+
+If this project helped you understand **LangGraph, Supervisor Agents, Tavily integration, or Agentic AI workflows**, consider giving the repository a **⭐ star** and sharing it with other developers exploring **stateful multi-agent systems**. 🚀
